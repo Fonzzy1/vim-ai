@@ -6,9 +6,14 @@ endif
 
 let s:plugin_root = expand('<sfile>:p:h:h')
 
-cal vim_ai_provider#Register('openai', {
+call vim_ai_provider#Register('openai', {
 \  'script_path': s:plugin_root . '/py/providers/openai.py',
 \  'class_name': 'OpenAIProvider',
+\})
+
+call vim_ai_provider#Register('openai_responses', {
+\  'script_path': s:plugin_root . '/py/openai_responses.py',
+\  'class_name': 'OpenAiResponsesProvider',
 \})
 
 command! -range -nargs=? -complete=customlist,vim_ai#RoleCompletionComplete AI <line1>,<line2>call vim_ai#AIRun(<range>, {}, <q-args>)
