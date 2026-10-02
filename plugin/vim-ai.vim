@@ -12,7 +12,7 @@ call vim_ai_provider#Register('openai', {
 \})
 
 call vim_ai_provider#Register('openai_responses', {
-\  'script_path': s:plugin_root . '/py/openai_responses.py',
+\  'script_path': s:plugin_root . '/py/providers/openai_responses.py',
 \  'class_name': 'OpenAiResponsesProvider',
 \})
 
