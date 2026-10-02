@@ -4,6 +4,20 @@ if !has('python3')
   finish
 endif
 
+
+if !exists('g:vim_ai_openai_responses_logging')
+    let g:vim_ai_openai_responses_logging = 0
+endif
+if !exists('g:vim_ai_openai_responses_logging_file')
+    let g:vim_ai_openai_responses_logging_file = ""
+endif
+if !exists('g:vim_ai_openai_responses_ai_logging')
+    let g:vim_ai_openai_responses_ai_logging = 0
+endif
+if !exists('g:vim_ai_openai_responses_ai_logging_file')
+    let g:vim_ai_openai_responses_ai_logging_file = ""
+endif
+
 let s:plugin_root = expand('<sfile>:p:h:h')
 
 call vim_ai_provider#Register('openai', {
